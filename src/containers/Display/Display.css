@@ -1,0 +1,9 @@
+.Display {
+  height: max-content;
+  width: 100%;
+}
+
+.swatch {
+  height: 100px;
+  width: 100px;
+}
