@@ -75,7 +75,6 @@ export const postPalette = async currentPalette => {
     hex_4: currentPalette.colors[3].hex_4,
     hex_5: currentPalette.colors[4].hex_5
   };
-
   const options = {
     method: "POST",
     body: JSON.stringify(details),
@@ -97,7 +96,7 @@ export const postPalette = async currentPalette => {
 export const patchProject = async (name, id) => {
   const options = {
     method: "PATCH",
-    body: JSON.stringify(name),
+    body: name,
     headers: {
       "Content-Type": "Application/JSON"
     }
@@ -136,7 +135,7 @@ export const patchPalette = async (currentPalette, id) => {
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes/${id}`;
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw new Error("There was a problem posting the palette.");
+    throw new Error("There was a problem patching the palette.");
   }
   const body = await response.json();
   return body;
