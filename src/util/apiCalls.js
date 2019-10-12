@@ -48,10 +48,10 @@ export const getPalette = async id => {
 
 export const postProject = async name => {
   const options = {
-    method: "POST",
-    body: JSON.stringify(name),
+    method: 'POST',
+    body: JSON.stringify({ project: name}),
     headers: {
-      "Content-Type": "Application/JSON"
+      'Content-Type': 'application/json'
     }
   };
   // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
