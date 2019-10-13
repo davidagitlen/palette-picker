@@ -46,10 +46,10 @@ export const getPalette = async id => {
   return body;
 };
 
-export const postProject = async project => {
+export const postProject = async name => {
   const options = {
     method: 'POST',
-    body: JSON.stringify(project),
+    body: JSON.stringify({project: name}),
     headers: {
       'Content-Type': 'Application/json'
     }
