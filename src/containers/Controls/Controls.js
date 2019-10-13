@@ -5,14 +5,13 @@ class Controls extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      projects: [...this.props.projects],
       palette: "",
       project: ""
     }
   }
 
   componentDidMount() {
-
+    this.setState({projects: this.props.projects})
   }
 
   handleChange = e => {
@@ -30,18 +29,28 @@ class Controls extends Component {
     this.props.saveCurrentPalette(palette, project)
   }
 
+
   render() {
+    const { projects } = this.props;
+    const projectList = projects.map(project => {
+      return <option value={project.project} key={project.id}>{project.project}</option>
+    });
     return (
       <form className="Controls">
         <h2>Controls</h2>
         <button onClick={this.handleRandomize}>New palette!</button>
         <input
+          list='project-list'
           type='text'
           name='project'
           placeholder='Select a project!'
+          autoComplete='off'
           value={this.state.project} 
           onChange={this.handleChange}
         />
+        <datalist id='project-list'>
+          {projectList}
+        </datalist>
         <input
           type='text'
           name='palette'

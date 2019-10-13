@@ -255,7 +255,7 @@ describe("apiCalls", () => {
         process.env.REACT_APP_BACKEND_URL + "/api/v1/projects/",
         {
           body: '{"project":"Project"}',
-          headers: { "Content-Type": "Application/JSON" },
+          headers: { "Content-Type": "Application/json" },
           method: "POST"
         }
       );
@@ -326,7 +326,7 @@ describe("apiCalls", () => {
         process.env.REACT_APP_BACKEND_URL + "/api/v1/palettes/",
         {
           body: result,
-          headers: { "Content-Type": "Application/JSON" },
+          headers: { "Content-Type": "Application/json" },
           method: "POST"
         }
       );

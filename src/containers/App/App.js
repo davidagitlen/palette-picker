@@ -3,7 +3,7 @@ import './App.css';
 import Display from '../Display/Display';
 import Controls from '../Controls/Controls';
 import Projects from '../Projects/Projects';
-import { getProjects, getPalettes } from '../../util/apiCalls'; 
+import { getProjects, getPalettes, postPalette, postProject } from '../../util/apiCalls'; 
 
 class App extends Component{
   constructor(){
@@ -21,7 +21,8 @@ class App extends Component{
         ]
       },
       projects: [],
-      palettes: []
+      palettes: [],
+      error: ''
     }
   }
 
@@ -55,9 +56,24 @@ class App extends Component{
     this.setState({currentPalette : { palette, project_name, colors: newColors } }, () => {console.log(this.state)})
   }
 
-  saveCurrentPalette = (paletteName, projectName) => {
+  saveCurrentPalette = async (paletteName, projectName) => {
+    const { projects} = this.state;   
     const { colors }  = this.state.currentPalette;
-    this.setState({ currentPalette: { palette: paletteName, project_name: projectName, colors: colors } }, () => { console.log('after save', this.state) });
+    await this.setState({ currentPalette: { palette: paletteName, project_name: projectName, colors: colors } }, () => { console.log('after save', this.state) });
+    if (projects.some(project => project.project === projectName)) {
+      try { 
+        await postPalette(this.state.currentPalette)
+      } catch (error) {
+        this.setState({error})
+      }
+    } else {
+      try {
+        await postProject(projectName)
+        await postPalette(this.state.currentPalette)
+      } catch (error) {
+        this.setState({error}, () => {console.log(this.state)})
+      }
+    }
   }
 
   toggleLock = (position) => {
@@ -75,6 +91,7 @@ class App extends Component{
 
   render(){
     const { currentPalette, projects, palettes } = this.state;
+
     return (
       <main className="App">
         <h1>App</h1>
@@ -82,7 +99,7 @@ class App extends Component{
           currentPalette={currentPalette}
           toggleLock={this.toggleLock}/>
         <Controls 
-          projects={projects} 
+          projects={projects}
           saveCurrentPalette={this.saveCurrentPalette}
           getRandomHexes={this.getRandomHexes}
           />
