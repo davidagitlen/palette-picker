@@ -94,15 +94,19 @@ class App extends Component{
 
     return (
       <main className="App">
-        <h1>App</h1>
-        <Display 
-          currentPalette={currentPalette}
-          toggleLock={this.toggleLock}/>
-        <Controls 
-          projects={projects}
-          saveCurrentPalette={this.saveCurrentPalette}
-          getRandomHexes={this.getRandomHexes}
-          />
+        <h1>Color Schema</h1>
+        <div className='top-wrapper'>
+          <div className='controls-background'>
+            <Controls 
+              projects={projects}
+              saveCurrentPalette={this.saveCurrentPalette}
+              getRandomHexes={this.getRandomHexes}
+              />
+          </div>
+          <Display 
+            currentPalette={currentPalette}
+            toggleLock={this.toggleLock}/>
+        </div>
         <Projects />
       </main>
     );

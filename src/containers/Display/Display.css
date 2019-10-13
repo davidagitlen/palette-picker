@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-around;
   height: max-content;
-  width: 60%;
+  width: 50%;
 }
 
 .swatch {
@@ -21,8 +21,9 @@
 }
 
 .hex-code {
-    display: inline-block;
-    font-size: 36px;
-    line-height: 100px;
-    vertical-align: text-bottom;
+  font-family: 'Source Code Pro', monospace;
+  display: inline-block;
+  font-size: 36px;
+  line-height: 100px;
+  vertical-align: text-bottom;
 }

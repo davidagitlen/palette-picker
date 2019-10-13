@@ -37,9 +37,14 @@ class Controls extends Component {
     });
     return (
       <form className="Controls">
-        <h2>Controls</h2>
-        <button onClick={this.handleRandomize}>New palette!</button>
+        <button 
+          className='random-hex-button'
+          onClick={this.handleRandomize}
+          >
+          New palette!
+        </button>
         <input
+          className='project-name-input'
           list='project-list'
           type='text'
           name='project'
@@ -52,13 +57,19 @@ class Controls extends Component {
           {projectList}
         </datalist>
         <input
+          className='palette-name-input'
           type='text'
           name='palette'
           placeholder='Name your palette!'
           value={this.state.palette}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSave}>Save Palette</button>
+        <button 
+          className='save-button'
+          onClick={this.handleSave}
+          >
+          Save Palette
+        </button>
       </form>
     )
   }

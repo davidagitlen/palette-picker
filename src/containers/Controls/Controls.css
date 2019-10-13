@@ -1,0 +1,43 @@
+button {
+  font-family: 'Roboto', sans-serif;
+  height: 50px;
+  width: 250px;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  height: 45px;
+  width: 250px;
+}
+
+.Controls {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  grid-template:
+    "a . ." 1fr
+    "b . ." .5fr
+    "c d e" 1fr
+    ". . f" .5fr
+    ". . g" 1fr / 2fr 1fr 2fr;
+  height: 400px;
+  width: 100%;
+  padding: 15% 3%;
+}
+
+.random-hex-button {
+  display: block;
+  grid-area: a;
+}
+
+.project-name-input {
+  grid-area: c;
+}
+
+.palette-name-input {
+  grid-area: e;
+}
+
+.save-button {
+  grid-area: g;
+}

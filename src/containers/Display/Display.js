@@ -32,7 +32,6 @@ const Display = ({ currentPalette, toggleLock }) => {
   })
   return (
     <section className="Display">
-      <h2>Display</h2>
       <div>
         {swatches}
       </div>
