@@ -1,9 +1,28 @@
 .Display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   height: max-content;
-  width: 100%;
+  width: 60%;
 }
 
 .swatch {
+  display: inline-block;
   height: 100px;
-  width: 100px;
+  width: 500px;
+  margin: 0px auto;
+}
+
+.lock-image {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 27px 10px;
+}
+
+.hex-code {
+    display: inline-block;
+    font-size: 36px;
+    line-height: 100px;
+    vertical-align: text-bottom;
 }
