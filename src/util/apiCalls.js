@@ -96,7 +96,7 @@ export const postPalette = async currentPalette => {
 export const patchProject = async (name, id) => {
   const options = {
     method: "PATCH",
-    body: name,
+    body: JSON.stringify({project: name}),
     headers: {
       "Content-Type": "Application/JSON"
     }
@@ -152,8 +152,6 @@ export const deleteProject = async id => {
   if (!response.ok) {
     throw new Error("There was a problem deleting the project.");
   }
-  const body = await response.json();
-  return body;
 };
 
 export const deletePalette = async id => {
@@ -167,8 +165,6 @@ export const deletePalette = async id => {
   if (!response.ok) {
     throw new Error("There was a problem deleting the palette.");
   }
-  const body = await response.json();
-  return body;
 };
 
 export const searchByHex = async hex => {

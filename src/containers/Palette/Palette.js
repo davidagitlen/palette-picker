@@ -1,5 +1,7 @@
 import React from "react";
 import "./Palette.css";
+import update from '../../images/update.svg';
+import trash from '../../images/trash.svg';
 
 const Palette = ({palette, editPalette, trashPalette}) => {
 
