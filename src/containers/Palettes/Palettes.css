@@ -1,0 +1,13 @@
+.Palettes > h3 {
+  height: 50px;
+}
+
+.Palettes {
+  align-content: flex-end;
+  flex-direction: row;
+  border: 1px solid black;
+  height: max-content;
+  margin: 50px auto 25px auto;
+  width: 40%;
+  border: 1px solid black;
+}

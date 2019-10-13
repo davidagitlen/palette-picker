@@ -1,0 +1,26 @@
+.project-wrapper {
+  flex-direction: column;
+  margin: 25px auto 0 auto;
+  width: 40%;
+}
+
+.project-wrapper > h3 {
+  border: 1px solid black;
+  height: 50px;
+}
+
+.project-wrapper > h3:first-child {
+  background-color: #7383C0;
+}
+
+.Project {
+  align-content: flex-start;
+  background-color: #E8E8E8;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  height: max-content;
+  margin: 25px auto;
+  min-height: 150px;
+  width: 90%;
+}
