@@ -46,12 +46,12 @@ export const getPalette = async id => {
   return body;
 };
 
-export const postProject = async name => {
+export const postProject = async project => {
   const options = {
     method: 'POST',
-    body: JSON.stringify({ project: name}),
+    body: JSON.stringify(project),
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'Application/json'
     }
   };
   // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
@@ -79,7 +79,7 @@ export const postPalette = async currentPalette => {
     method: "POST",
     body: JSON.stringify(details),
     headers: {
-      "Content-Type": "Application/JSON"
+      "Content-Type": "Application/json"
     }
   };
   // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
