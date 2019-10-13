@@ -254,7 +254,7 @@ describe("apiCalls", () => {
       expect(window.fetch).toHaveBeenCalledWith(
         process.env.REACT_APP_BACKEND_URL + "/api/v1/projects/",
         {
-          body: '{"project":"Project"}',
+          body: '{"project":{"project":"Project"}}',
           headers: { "Content-Type": "Application/json" },
           method: "POST"
         }
