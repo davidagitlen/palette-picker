@@ -109,6 +109,8 @@ class App extends Component {
     if (projects.some(project => project.project === projectName)) {
       try {
         await postPalette(this.state.currentPalette);
+        const palettes = await getPalettes();
+        this.setState({palettes});
       } catch (error) {
         this.setState({ error });
       }
@@ -143,6 +145,7 @@ class App extends Component {
   };
 
   editProject = async (projectName, id) => {
+    console.log('editProject args', projectName, id)
     try {
       await patchProject(projectName, id);
       const projects = await getProjects();
@@ -153,10 +156,14 @@ class App extends Component {
   };
 
   trashProject = async id => {
+    console.log('trying to trash project')
     try {
+      console.log('inside the try catch')
       await deleteProject(id);
+      console.log('deletion is finished')
       const projects = await getProjects();
-      this.setState({ projects });
+      console.log('after fetching projects', projects)
+      this.setState({ projects }, () => {console.log(this.state)});
     } catch (error) {
       this.setState({ error });
     }

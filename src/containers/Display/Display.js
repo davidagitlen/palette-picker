@@ -7,7 +7,7 @@ const Display = ({ currentPalette, toggleLock }) => {
   const swatches = currentPalette.colors.map((color, i) => {
   const lockPath = color.locked ? locked : unlocked;
       return(
-      <>
+      <div key={'div' + i + Date.now()}>
         <div 
           className='swatch'
           style={{backgroundColor:color[`hex_${i+1}`]}}
@@ -24,10 +24,11 @@ const Display = ({ currentPalette, toggleLock }) => {
           />
         <h3
           className='hex-code'
+          key={'h3' + Date.now()}
         >
         {color[`hex_${i + 1}`]}
         </h3>
-      </>
+      </div>
       )
   })
   return (
