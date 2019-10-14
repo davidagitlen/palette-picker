@@ -411,7 +411,7 @@ describe("apiCalls", () => {
       expect(window.fetch).toHaveBeenCalledWith(
         process.env.REACT_APP_BACKEND_URL + "/api/v1/projects/1",
         {
-          body: "Project",
+          body: "{\"project\":\"Project\"}",
           headers: { "Content-Type": "Application/JSON" },
           method: "PATCH"
         }
