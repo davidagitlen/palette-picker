@@ -36,7 +36,7 @@ class Project extends Component{
             src={trash}
             onClick={() => trashProject(project.id)}
           />
-          <label for="trash">Trash</label>
+          <label htmlFor="trash">Trash</label>
         </div>
         <div className='input-wrapper'>
           <input
@@ -46,7 +46,7 @@ class Project extends Component{
             src={update}
             onClick={() => editProject(this.state.project,project.id)}
           />
-          <label for="update">Update</label>
+          <label htmlFor="update">Update</label>
         </div>
         <div className="project-wrapper">
           <h3>Project:</h3>

@@ -109,6 +109,8 @@ class App extends Component {
     if (projects.some(project => project.project === projectName)) {
       try {
         await postPalette(this.state.currentPalette);
+        const palettes = await getPalettes();
+        this.setState({palettes});
       } catch (error) {
         this.setState({ error });
       }

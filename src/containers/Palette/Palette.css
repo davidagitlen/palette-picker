@@ -1,5 +1,31 @@
 .Palette {
+  display: flex;
+  flex-direction: row;
   height: 50px;
   width: 100%;
   border: 1px solid black;
+}
+
+.palette-name-wrapper {
+  height: 100%;
+  width: 50%;
+}
+
+.swatch-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 50%;
+}
+
+.swatches {
+  height: 100%;
+  width: 20%;
+}
+
+.trash {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  flex-direction: row;
 }
