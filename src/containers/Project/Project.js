@@ -24,7 +24,8 @@ class Project extends Component{
       editProject, 
       editPalette, 
       trashProject, 
-      trashPalette } = this.props;
+      trashPalette,
+      selectPalette } = this.props;
     const filteredPalettes = palettes.filter(palette => palette.project_id === project.id)
     return (
       <article className="Project">
@@ -62,6 +63,7 @@ class Project extends Component{
           palettes={filteredPalettes}
           editPalette={editPalette}
           trashPalette={trashPalette}
+          selectPalette={selectPalette}
         />
       </article>
     );

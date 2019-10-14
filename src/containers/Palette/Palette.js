@@ -2,7 +2,7 @@ import React from "react";
 import "./Palette.css";
 import trash from '../../images/trash.svg';
 
-const Palette = ({palette, editPalette, trashPalette}) => {
+const Palette = ({palette, editPalette, trashPalette, selectPalette}) => {
   console.log('in Palette', palette)
   const {
     hex_1,
@@ -23,10 +23,16 @@ const Palette = ({palette, editPalette, trashPalette}) => {
   return (
     <>
     <article className="Palette">
-      <div className='palette-name-wrapper'>
+      <div 
+        className='palette-name-wrapper'
+        onClick={() => selectPalette(palette)}
+      >
         <h3>{palette.palette}</h3>
       </div>
-      <div className='swatch-wrapper'>
+      <div 
+        className='swatch-wrapper'
+        onClick={() => selectPalette(palette)}
+        >
         {swatchList}
       </div>
       <input

@@ -189,6 +189,19 @@ class App extends Component {
     }
   };
 
+  selectPalette = palette => {
+    const colors = [
+      { hex_1: palette.hex_1 },
+      { hex_2: palette.hex_2 },
+      { hex_3: palette.hex_3 },
+      { hex_4: palette.hex_4 },
+      { hex_5: palette.hex_5 }
+    ]; 
+    this.setState({currentPalette: { palette: palette.palette, project_name: palette.project_name, colors}}, () => {
+      console.log('after picking existing palette', this.state)
+    })
+  }
+
   render() {
     const { currentPalette, projects, palettes } = this.state;
 
@@ -215,6 +228,7 @@ class App extends Component {
           editPalette={this.editPalette}
           trashProject={this.trashProject}
           trashPalette={this.trashPalette}
+          selectPalette={this.selectPalette}
         />
       </main>
     );
