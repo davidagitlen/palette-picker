@@ -6,6 +6,10 @@
   border: 1px solid black;
 }
 
+.Palette:hover {
+  cursor: pointer;
+}
+
 .palette-name-wrapper {
   height: 100%;
   width: 50%;

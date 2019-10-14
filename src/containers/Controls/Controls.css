@@ -11,6 +11,10 @@ input {
   width: 250px;
 }
 
+p {
+  grid-area: h;
+}
+
 .Controls {
   font-family: 'Roboto', sans-serif;
   display: grid;
@@ -19,7 +23,9 @@ input {
     "b . ." .5fr
     "c d e" 1fr
     ". . f" .5fr
-    ". . g" 1fr / 2fr 1fr 2fr;
+    ". . g" 1fr 
+    "h . ." .5fr
+    "i j k" 1fr/ 2fr 1fr 2fr;
   height: 400px;
   width: 100%;
   padding: 15% 3%;
@@ -40,4 +46,16 @@ input {
 
 .save-button {
   grid-area: g;
+}
+
+.hex-input {
+  grid-area: i;
+}
+
+.search-button {
+  grid-area: j;
+}
+
+.clear-button {
+  grid-area: k;
 }

@@ -6,7 +6,8 @@ class Controls extends Component {
     super(props)
     this.state = {
       palette: "",
-      project: ""
+      project: "",
+      hex: ""
     }
   }
 
@@ -31,7 +32,7 @@ class Controls extends Component {
 
 
   render() {
-    const { projects } = this.props;
+    const { projects, findPalettes, clearSearch } = this.props;
     const projectList = projects.map(project => {
       return <option value={project.project} key={project.id}>{project.project}</option>
     });
@@ -69,6 +70,27 @@ class Controls extends Component {
           onClick={this.handleSave}
           >
           Save Palette
+        </button>
+        <p>Search By Hex</p>
+        <input
+          className='hex-input'
+          type='text'
+          name='hex'
+          placeholder='Enter hex code!'
+          value={this.state.hex}
+          onChange={this.handleChange}
+          />
+        <button
+          className='search-button'
+          onClick={e => findPalettes(e, this.state.hex)}
+        >
+          Search
+        </button>
+        <button
+          className='clear-button'
+          onClick={clearSearch}
+        >
+          Clear
         </button>
       </form>
     )

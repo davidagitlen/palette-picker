@@ -11,7 +11,8 @@ import {
   patchProject,
   patchPalette,
   deleteProject,
-  deletePalette
+  deletePalette,
+  searchByHex
   } from '../../util/apiCalls'; 
 
 class App extends Component {
@@ -31,7 +32,8 @@ class App extends Component {
       },
       projects: [],
       palettes: [],
-      error: ""
+      error: "",
+      foundPalettes: []
     };
   }
 
@@ -189,18 +191,57 @@ class App extends Component {
     }
   };
 
-  render() {
-    const { currentPalette, projects, palettes } = this.state;
+  selectPalette = palette => {
+    const colors = [
+      { hex_1: palette.hex_1 },
+      { hex_2: palette.hex_2 },
+      { hex_3: palette.hex_3 },
+      { hex_4: palette.hex_4 },
+      { hex_5: palette.hex_5 }
+    ]; 
+    this.setState({currentPalette: { palette: palette.palette, project_name: palette.project_name, colors}}, () => {
+      console.log('after picking existing palette', this.state)
+    })
+  }
 
+  findPalettes = async (e, hex) => {
+    e.preventDefault();
+    try {
+      const foundPalettes = await searchByHex(hex);
+      this.setState({foundPalettes}, () => (console.log('after findPalettes', this.state)));
+    } catch (error) {
+      this.setState({error})
+    }
+  }
+
+  clearSearch = e => {
+    e.preventDefault();
+    this.setState({foundPalettes: []}, () => {console.log(this.state)});
+  }
+
+  render() {
+    const { currentPalette, foundPalettes } = this.state;
+    let foundProjects;
+    if (foundPalettes.length) {
+      foundProjects = this.state.projects.filter(project => 
+        foundPalettes.some(palette => palette.project_id === project.id)
+      )
+    }
+    console.log(foundProjects);
+    const palettes = foundPalettes.length ? foundPalettes : this.state.palettes;
+    const projectsToShow = foundPalettes.length ? foundProjects : 
+    this.state.projects;
     return (
       <main className="App">
         <h1>Color Schema</h1>
         <div className="top-wrapper">
           <div className="controls-background">
             <Controls
-              projects={projects}
+              projects={this.state.projects}
               saveCurrentPalette={this.saveCurrentPalette}
               getRandomHexes={this.getRandomHexes}
+              findPalettes={this.findPalettes}
+              clearSearch={this.clearSearch}
             />
           </div>
           <Display
@@ -209,12 +250,13 @@ class App extends Component {
           />
         </div>
         <Projects
-          projects={projects}
+          projects={projectsToShow}
           palettes={palettes}
           editProject={this.editProject}
           editPalette={this.editPalette}
           trashProject={this.trashProject}
           trashPalette={this.trashPalette}
+          selectPalette={this.selectPalette}
         />
       </main>
     );
