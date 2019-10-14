@@ -11,7 +11,8 @@ import {
   patchProject,
   patchPalette,
   deleteProject,
-  deletePalette
+  deletePalette,
+  searchByHex
   } from '../../util/apiCalls'; 
 
 class App extends Component {
@@ -31,7 +32,8 @@ class App extends Component {
       },
       projects: [],
       palettes: [],
-      error: ""
+      error: "",
+      foundPalettes: []
     };
   }
 
@@ -202,18 +204,44 @@ class App extends Component {
     })
   }
 
-  render() {
-    const { currentPalette, projects, palettes } = this.state;
+  findPalettes = async (e, hex) => {
+    e.preventDefault();
+    try {
+      const foundPalettes = await searchByHex(hex);
+      this.setState({foundPalettes}, () => (console.log('after findPalettes', this.state)));
+    } catch (error) {
+      this.setState({error})
+    }
+  }
 
+  clearSearch = e => {
+    e.preventDefault();
+    this.setState({foundPalettes: []}, () => {console.log(this.state)});
+  }
+
+  render() {
+    const { currentPalette, foundPalettes } = this.state;
+    let foundProjects;
+    if (foundPalettes.length) {
+      foundProjects = this.state.projects.filter(project => 
+        foundPalettes.some(palette => palette.project_id === project.id)
+      )
+    }
+    console.log(foundProjects);
+    const palettes = foundPalettes.length ? foundPalettes : this.state.palettes;
+    const projectsToShow = foundPalettes.length ? foundProjects : 
+    this.state.projects;
     return (
       <main className="App">
         <h1>Color Schema</h1>
         <div className="top-wrapper">
           <div className="controls-background">
             <Controls
-              projects={projects}
+              projects={this.state.projects}
               saveCurrentPalette={this.saveCurrentPalette}
               getRandomHexes={this.getRandomHexes}
+              findPalettes={this.findPalettes}
+              clearSearch={this.clearSearch}
             />
           </div>
           <Display
@@ -222,7 +250,7 @@ class App extends Component {
           />
         </div>
         <Projects
-          projects={projects}
+          projects={projectsToShow}
           palettes={palettes}
           editProject={this.editProject}
           editPalette={this.editPalette}
