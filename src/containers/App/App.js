@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Display from '../Display/Display';
 import Controls from '../Controls/Controls';
+import Preview from "../Preview/Preview";
 import Projects from '../Projects/Projects';
 import { 
   getProjects, 
@@ -40,11 +41,9 @@ class App extends Component {
   componentDidMount = async () => {
     const projects = await getProjects();
     this.setState({ projects }, () => {
-      console.log(this.state);
     });
     const palettes = await getPalettes();
     this.setState({ palettes }, () => {
-      console.log(this.state.currentPalette.colors);
     });
   };
 
@@ -86,10 +85,7 @@ class App extends Component {
       }
     });
     this.setState(
-      { currentPalette: { palette, project_name, colors: newColors } },
-      () => {
-        console.log(this.state);
-      }
+      { currentPalette: { palette, project_name, colors: newColors } }
     );
   };
 
@@ -103,9 +99,6 @@ class App extends Component {
           project_name: projectName,
           colors: colors
         }
-      },
-      () => {
-        console.log("after save", this.state);
       }
     );
     if (projects.some(project => project.project === projectName)) {
@@ -121,9 +114,7 @@ class App extends Component {
         await postProject(projectName);
         await postPalette(this.state.currentPalette);
       } catch (error) {
-        this.setState({ error }, () => {
-          console.log(this.state);
-        });
+        this.setState({ error });
       }
     }
   };
@@ -139,15 +130,11 @@ class App extends Component {
       }
     });
     this.setState(
-      { currentPalette: { palette, project_name, colors: newColors } },
-      () => {
-        console.log(this.state);
-      }
+      { currentPalette: { palette, project_name, colors: newColors } }
     );
   };
 
   editProject = async (projectName, id) => {
-    console.log('editProject args', projectName, id)
     try {
       await patchProject(projectName, id);
       const projects = await getProjects();
@@ -158,14 +145,10 @@ class App extends Component {
   };
 
   trashProject = async id => {
-    console.log('trying to trash project')
     try {
-      console.log('inside the try catch')
       await deleteProject(id);
-      console.log('deletion is finished')
       const projects = await getProjects();
-      console.log('after fetching projects', projects)
-      this.setState({ projects }, () => {console.log(this.state)});
+      this.setState({ projects });
     } catch (error) {
       this.setState({ error });
     }
@@ -199,16 +182,14 @@ class App extends Component {
       { hex_4: palette.hex_4 },
       { hex_5: palette.hex_5 }
     ]; 
-    this.setState({currentPalette: { palette: palette.palette, project_name: palette.project_name, colors}}, () => {
-      console.log('after picking existing palette', this.state)
-    })
+    this.setState({currentPalette: { palette: palette.palette, project_name: palette.project_name, colors}})
   }
 
   findPalettes = async (e, hex) => {
     e.preventDefault();
     try {
       const foundPalettes = await searchByHex(hex);
-      this.setState({foundPalettes}, () => (console.log('after findPalettes', this.state)));
+      this.setState({foundPalettes});
     } catch (error) {
       this.setState({error})
     }
@@ -227,7 +208,6 @@ class App extends Component {
         foundPalettes.some(palette => palette.project_id === project.id)
       )
     }
-    console.log(foundProjects);
     const palettes = foundPalettes.length ? foundPalettes : this.state.palettes;
     const projectsToShow = foundPalettes.length ? foundProjects : 
     this.state.projects;
@@ -248,6 +228,7 @@ class App extends Component {
             currentPalette={currentPalette}
             toggleLock={this.toggleLock}
           />
+          <Preview projectName={currentPalette.project_name} paletteName={currentPalette.palette} colors={currentPalette} />
         </div>
         <Projects
           projects={projectsToShow}

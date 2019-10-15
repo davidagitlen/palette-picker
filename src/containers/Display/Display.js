@@ -8,12 +8,6 @@ const Display = ({ currentPalette, toggleLock }) => {
   const lockPath = color.locked ? locked : unlocked;
       return(
       <div key={'div' + i + Date.now()}>
-        <div 
-          className='swatch'
-          style={{backgroundColor:color[`hex_${i+1}`]}}
-          key={i + Date.now()}
-          >
-        </div>
         <input 
           className='lock-image'
           type='image' 
@@ -22,6 +16,12 @@ const Display = ({ currentPalette, toggleLock }) => {
           src={lockPath}
           onClick={() => toggleLock(i)}
           />
+        <div 
+          className='swatch'
+          style={{backgroundColor:color[`hex_${i+1}`]}}
+          key={i + Date.now()}
+          >
+        </div>
         <h3
           className='hex-code'
           key={'h3' + Date.now()}

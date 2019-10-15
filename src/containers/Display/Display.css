@@ -3,27 +3,28 @@
   flex-direction: column;
   justify-content: space-around;
   height: max-content;
-  width: 50%;
+  width: 25%;
 }
 
 .swatch {
   display: inline-block;
-  height: 100px;
-  width: 500px;
-  margin: 0px auto;
+  height: 50px;
+  width: 100px;
+  margin: 10px auto;
 }
 
 .lock-image {
   display: inline-block;
-  height: 50px;
-  width: 50px;
-  margin: 27px 10px;
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 15px 10px;
 }
 
 .hex-code {
   font-family: 'Source Code Pro', monospace;
   display: inline-block;
-  font-size: 36px;
-  line-height: 100px;
-  vertical-align: text-bottom;
+  font-size: 28px;
+  line-height: 59px;
+  padding: 0 0 0 10px;
+  vertical-align: bottom;
 }

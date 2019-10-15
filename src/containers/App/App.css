@@ -1,9 +1,10 @@
 h1 {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 68px;
-  display: inline;
   background-color: #424A60;
+  display: inline;
   color: #C8CAC8;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 66px;
+  line-height: 88px;
   margin: 0px 0px 25px 0px;
 
 }
