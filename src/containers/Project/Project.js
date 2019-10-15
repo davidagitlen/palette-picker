@@ -3,6 +3,7 @@ import './Project.css';
 import Palettes from '../Palettes/Palettes';
 import update from '../../images/update.svg';
 import trash from '../../images/trash.svg';
+import cross from "../../images/cross.png";
 
 class Project extends Component{
   constructor(props){
@@ -29,7 +30,7 @@ class Project extends Component{
     const filteredPalettes = palettes.filter(palette => palette.project_id === project.id)
     return (
       <article className="Project">
-        <div className='input-wrapper'>
+        <div className="input-wrapper">
           <input
             id="trash"
             type="image"
@@ -39,26 +40,27 @@ class Project extends Component{
           />
           <label htmlFor="trash">Trash</label>
         </div>
-        <div className='input-wrapper'>
+        <div className="input-wrapper">
           <input
             id="update"
             type="image"
             alt="update"
             src={update}
-            onClick={() => editProject(this.state.project,project.id)}
+            onClick={() => editProject(this.state.project, project.id)}
           />
           <label htmlFor="update">Update</label>
         </div>
         <div className="project-wrapper">
           <h3>Project:</h3>
           <input
-            className='project-name-input'
+            className="project-name-input"
             type="text"
             value={this.state.project}
             placeholder={project.project}
             onChange={this.handleChange}
           />
-        </div>            
+        </div>
+        <img src={cross} alt="line" className="cross" />
         <Palettes
           palettes={filteredPalettes}
           editPalette={editPalette}

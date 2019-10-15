@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Controls.css";
-import cross from '../../images/cross.png'
+import cross from '../../images/cross.png';
 
 class Controls extends Component {
   constructor(props) {
