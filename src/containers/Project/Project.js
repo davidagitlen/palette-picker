@@ -3,7 +3,7 @@ import './Project.css';
 import Palettes from '../Palettes/Palettes';
 import update from '../../images/update.svg';
 import trash from '../../images/trash.svg';
-import cross from "../../images/cross.png";
+import oneToMany from "../../images/one_to_many.png";
 
 class Project extends Component{
   constructor(props){
@@ -60,7 +60,7 @@ class Project extends Component{
             onChange={this.handleChange}
           />
         </div>
-        <img src={cross} alt="line" className="cross" />
+        <img src={oneToMany} alt="line" className="one-to-many" />
         <Palettes
           palettes={filteredPalettes}
           editPalette={editPalette}

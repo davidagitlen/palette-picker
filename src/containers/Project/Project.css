@@ -9,6 +9,7 @@ label {
 }
 
 .project-wrapper > h3 {
+  font-family: 'Source Code Pro', monospace;
   background-color: #424A60;
   color: snow;
   font-size: 28px;
@@ -53,8 +54,8 @@ label {
   margin: 35px 0px 0px 0px;
 }
 
-.cross {
-  height: 50px;
+.one-to-many {
+  height: 80px;
   padding: 60px 0 0 0;
   width: 100px;
 }
