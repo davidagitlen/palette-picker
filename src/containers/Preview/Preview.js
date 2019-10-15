@@ -26,15 +26,22 @@ const Preview = (props) => {
             style={{ border: border }}
           />
           <p className="page-body" style={{ color: body }}>
-            "Lorem lean startup ipsum product market fit customer development
+            Lorem lean startup ipsum product market fit customer development
             acquihire technical cofounder. User engagement A/B testing shrink a
-            market venture capital pitch deck. "
+            market venture capital pitch deck.
           </p>
           <p className="page-body" style={{ color: body }}>
-            "Social bookmarking group buying
-            crowded market pivot onboarding freemium prototype ping pong. Supply
-            chain bandwidth holy grail disruptive series. Analytics burn rate
-            entrepreneur beta hackathon agile development."
+            Social bookmarking group buying crowded market pivot onboarding
+            freemium prototype ping pong. Supply chain bandwidth holy grail
+            disruptive series. Analytics burn rate entrepreneur beta hackathon
+            agile development.
+          </p>
+          <p className="page-body" style={{ color: body }}>
+            Tech virtual drone online browser platform through in a system. But
+            stream software offline. Professor install angel sector anywhere
+            create at components smart. Document fab developers encryption
+            smartphone powered, bespoke blockstack edit atoms. Privacy news data
+            policies analytics documents.
           </p>
         </div>
         <footer
