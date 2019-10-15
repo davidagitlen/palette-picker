@@ -1,30 +1,28 @@
+import { constructDetails, cleanResults } from './dataHandlers';
+
 export const getProjects = async () => {
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/projects';
   const url = process.env.REACT_APP_BACKEND_URL + "/api/v1/projects/";
   const response = await fetch(url);
     if (!response.ok) {
       throw new Error ('There was a problem getting the projects.')
     }
   const body = await response.json();
-  return body;
+  const cleanBody = cleanResults(body);
+  return cleanBody;
 };
 
 export const getPalettes = async () => {
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + "/api/v1/palettes/";
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error("There was a problem getting the palettes.");
   }
   const body = await response.json();
-  return body;
+  const cleanBody = cleanResults(body);
+  return cleanBody;
 };
 
 export const getProject = async id => {
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/projects/${id}`;
   const response = await fetch(url);
   if (!response.ok) {
@@ -35,8 +33,6 @@ export const getProject = async id => {
 };
 
 export const getPalette = async id => {
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes/${id}`;
   const response = await fetch(url);
   if (!response.ok) {
@@ -54,8 +50,6 @@ export const postProject = async name => {
       'Content-Type': 'Application/json'
     }
   };
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/projects/`;
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -66,15 +60,7 @@ export const postProject = async name => {
 };
 
 export const postPalette = async currentPalette => {
-  const details = {
-    project_name: currentPalette.project_name,
-    palette: currentPalette.palette,
-    hex_1: currentPalette.colors[0].hex_1,
-    hex_2: currentPalette.colors[1].hex_2,
-    hex_3: currentPalette.colors[2].hex_3,
-    hex_4: currentPalette.colors[3].hex_4,
-    hex_5: currentPalette.colors[4].hex_5
-  };
+  const details = constructDetails(currentPalette);
   const options = {
     method: "POST",
     body: JSON.stringify(details),
@@ -82,8 +68,6 @@ export const postPalette = async currentPalette => {
       "Content-Type": "Application/json"
     }
   };
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes/`;
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -101,8 +85,6 @@ export const patchProject = async (name, id) => {
       "Content-Type": "Application/JSON"
     }
   };
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/projects/${id}`;
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -113,16 +95,7 @@ export const patchProject = async (name, id) => {
 };
 
 export const patchPalette = async (currentPalette, id) => {
-  const details = {
-    project_name: currentPalette.project_name,
-    palette: currentPalette.palette,
-    hex_1: currentPalette.colors[0].hex_1,
-    hex_2: currentPalette.colors[1].hex_2,
-    hex_3: currentPalette.colors[2].hex_3,
-    hex_4: currentPalette.colors[3].hex_4,
-    hex_5: currentPalette.colors[4].hex_5
-  };
-
+  const details = constructDetails(currentPalette);
   const options = {
     method: "PATCH",
     body: JSON.stringify(details),
@@ -130,8 +103,6 @@ export const patchPalette = async (currentPalette, id) => {
       "Content-Type": "Application/JSON"
     }
   };
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes/${id}`;
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -145,8 +116,6 @@ export const deleteProject = async id => {
   const options = {
     method: "DELETE"
   };
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/projects/${id}`;
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -158,8 +127,6 @@ export const deletePalette = async id => {
   const options = {
     method: "DELETE"
   };
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes/${id}`;
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -168,13 +135,12 @@ export const deletePalette = async id => {
 };
 
 export const searchByHex = async hex => {
-  // const url = 'https://palette-picker-api-williams.herokuapp.com/api/v1/projects';
-  // const url = 'http://localhost:3001/api/v1/palettes';
   const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes?hex=${hex}`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error("There was a problem searching for palettes.");
   }
   const body = await response.json();
-  return body;
+  const cleanBody = cleanResults(body)
+  return cleanBody;
 };

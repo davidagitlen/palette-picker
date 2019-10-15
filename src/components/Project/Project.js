@@ -13,10 +13,9 @@ class Project extends Component{
   }
 
   handleChange = e => {
-    this.setState({project: e.target.value}, () => {
-      console.log(this.state)
-    })
+    this.setState({project: e.target.value});
   }
+  
   render() {
     const { 
       project, 
@@ -45,7 +44,7 @@ class Project extends Component{
             type="image"
             alt="update"
             src={update}
-            onClick={() => editProject(this.state.project,project.id)}
+            onClick={() => editProject(this.state.project, project.id)}
           />
           <label htmlFor="update">Update</label>
         </div>

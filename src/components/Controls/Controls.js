@@ -30,9 +30,14 @@ class Controls extends Component {
     this.props.saveCurrentPalette(palette, project)
   }
 
+  handleClearForm = e => {
+    e.preventDefault();
+    this.props.clearSearch();
+    this.setState({hex : ''});
+  }
 
   render() {
-    const { projects, findPalettes, clearSearch } = this.props;
+    const { projects, findPalettes } = this.props;
     const projectList = projects.map(project => {
       return <option value={project.project} key={project.id}>{project.project}</option>
     });
@@ -88,7 +93,7 @@ class Controls extends Component {
         </button>
         <button
           className='clear-button'
-          onClick={clearSearch}
+          onClick={this.handleClearForm}
         >
           Clear
         </button>
