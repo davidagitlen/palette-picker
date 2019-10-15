@@ -3,6 +3,7 @@ import './Project.css';
 import Palettes from '../Palettes/Palettes';
 import update from '../../images/update.svg';
 import trash from '../../images/trash.svg';
+import oneToMany from "../../images/one_to_many.png";
 
 class Project extends Component{
   constructor(props){
@@ -28,7 +29,7 @@ class Project extends Component{
     const filteredPalettes = palettes.filter(palette => palette.project_id === project.id)
     return (
       <article className="Project">
-        <div className='input-wrapper'>
+        <div className="input-wrapper">
           <input
             id="trash"
             type="image"
@@ -38,7 +39,7 @@ class Project extends Component{
           />
           <label htmlFor="trash">Trash</label>
         </div>
-        <div className='input-wrapper'>
+        <div className="input-wrapper">
           <input
             id="update"
             type="image"
@@ -51,13 +52,14 @@ class Project extends Component{
         <div className="project-wrapper">
           <h3>Project:</h3>
           <input
-            className='project-name-input'
+            className="project-name-input"
             type="text"
             value={this.state.project}
             placeholder={project.project}
             onChange={this.handleChange}
           />
-        </div>            
+        </div>
+        <img src={oneToMany} alt="line" className="one-to-many" />
         <Palettes
           palettes={filteredPalettes}
           editPalette={editPalette}

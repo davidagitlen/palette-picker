@@ -1,22 +1,31 @@
+label {
+  font-size: 18px;
+}
+
 .project-wrapper {
   flex-direction: column;
-  margin: 25px auto 0 auto;
+  margin: 35px auto 0 auto;
   width: 40%;
 }
 
 .project-wrapper > h3 {
-  border: 1px solid black;
+  font-family: 'Source Code Pro', monospace;
+  background-color: #424A60;
+  color: snow;
+  font-size: 28px;
   height: 50px;
-  background-color: #7383C0;
+  line-height: 45px;
+  margin: 0;
+  padding: 0 0 0 10px;
 }
 
 .project-name-input {
-  text-align: left;
-  border: 1.75px solid black;
+  font-size: 21px;
   height: 50px;
-  width: 99%;
   margin: 0px 0px 25px 0px;
   padding: 0px 0px 0px 5px;
+  text-align: left;
+  width: 98%;
 }
 
 .project-name-input::placeholder {
@@ -26,7 +35,6 @@
 .Project {
   align-content: flex-start;
   background-color: #E8E8E8;
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   height: max-content;
@@ -38,12 +46,23 @@
 .Project > input {
   width: 50px;
   height: 50px;
-  /* margin: 0px 5px 0px 5px; */
 }
 
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  margin: 65px 0px 0px 0px;
+  margin: 35px 0px 0px 0px;
+}
 
+.one-to-many {
+  height: 80px;
+  padding: 60px 0 0 0;
+  width: 100px;
+}
+
+#trash,
+#update {
+  display: inline-block;
+  height: 30px;
+  width: 100px;
 }

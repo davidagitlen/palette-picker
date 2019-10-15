@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Controls.css";
+import cross from '../../images/cross.png';
 
 class Controls extends Component {
   constructor(props) {
@@ -42,50 +43,49 @@ class Controls extends Component {
       return <option value={project.project} key={project.id}>{project.project}</option>
     });
     return (
-      <form className="Controls">
-        <button 
-          className='random-hex-button'
-          onClick={this.handleRandomize}
-          >
-          New palette!
-        </button>
-        <input
-          className='project-name-input'
-          list='project-list'
-          type='text'
-          name='project'
-          placeholder='Select a project!'
-          autoComplete='off'
-          value={this.state.project} 
-          onChange={this.handleChange}
-        />
-        <datalist id='project-list'>
-          {projectList}
-        </datalist>
-        <input
-          className='palette-name-input'
-          type='text'
-          name='palette'
-          placeholder='Name your palette!'
-          value={this.state.palette}
-          onChange={this.handleChange}
-        />
-        <button 
-          className='save-button'
-          onClick={this.handleSave}
-          >
-          Save Palette
-        </button>
-        <p>Search By Hex</p>
-        <input
-          className='hex-input'
-          type='text'
-          name='hex'
-          placeholder='Enter hex code!'
-          value={this.state.hex}
-          onChange={this.handleChange}
+      <>
+        <h2>Add A Project & Palette:</h2>
+        <form className="Controls">
+          <button className="random-hex-button" onClick={this.handleRandomize}>
+            New palette!
+          </button>
+          <img src={cross} alt="line" className="cross1" />
+          <input
+            className="project-name-input"
+            list="project-list"
+            type="text"
+            name="project"
+            placeholder="Select a project!"
+            autoComplete="off"
+            value={this.state.project}
+            onChange={this.handleChange}
           />
-        <button
+          <datalist id="project-list">{projectList}</datalist>
+          <img src={cross} alt="line" className="cross2" />
+          <input
+            className="palette-name-input"
+            type="text"
+            name="palette"
+            placeholder="Name your palette!"
+            value={this.state.palette}
+            onChange={this.handleChange}
+          />
+          <img src={cross} alt="line" className="cross3" />
+          <button className="save-button" onClick={this.handleSave}>
+            Save Palette
+          </button>
+          <h3>Search By Hex:</h3>
+          <input
+            className="hex-input"
+            type="text"
+            name="hex"
+            placeholder="Enter hex code!"
+            value={this.state.hex}
+            onChange={this.handleChange}
+          />
+          <img src={cross} alt="line" className="cross4" />
+          <div className="button-wrapper">
+            <button
           className='search-button'
           onClick={e => findPalettes(e, this.state.hex)}
         >
@@ -97,8 +97,10 @@ class Controls extends Component {
         >
           Clear
         </button>
-      </form>
-    )
+          </div>
+        </form>
+      </>
+    );
   }
 };
 

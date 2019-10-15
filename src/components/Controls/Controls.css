@@ -1,34 +1,47 @@
-button {
+button,
+input, 
+h2,
+h3 {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+button {
   height: 50px;
-  width: 250px;
+  width: 260px;
 }
 
 input {
-  font-family: 'Roboto', sans-serif;
   display: inline-block;
-  height: 45px;
-  width: 250px;
+  height: 48px;
+  width: 255px;
 }
 
-p {
+h2 {
+  font-size: 21px;
+  margin: 10px 0 10px 20px;
+  text-align: left;
+}
+
+h3 {
   grid-area: h;
+  font-size: 21px;
+  margin: 10px 0 5px 0px;
+  text-align: left;
 }
 
 .Controls {
-  font-family: 'Roboto', sans-serif;
   display: grid;
   grid-template:
     "a . ." 1fr
-    "b . ." .5fr
+    "b . ." 1fr
     "c d e" 1fr
     ". . f" .5fr
     ". . g" 1fr 
-    "h . ." .5fr
-    "i j k" 1fr/ 2fr 1fr 2fr;
-  height: 400px;
-  width: 100%;
-  padding: 15% 3%;
+    "h . ." 1fr
+    "i j k" 1fr/ 2fr .25fr 2fr;
+  height: 250px;
+  padding: 0 3%;
 }
 
 .random-hex-button {
@@ -37,7 +50,40 @@ p {
 }
 
 .project-name-input {
+  background-image: ;
   grid-area: c;
+  text-align: left;
+  height: 47px;
+  margin: 0 !important;
+  padding: 0px 0px 0px 5px;
+}
+
+.cross1 {
+  grid-area: b;
+  height: 35px;
+  width: 260px;
+  margin: auto;
+}
+
+.cross2 {
+  grid-area: d;
+  height: 50px;
+  width: 75px;
+  margin: auto;
+}
+
+.cross3 {
+  grid-area: f;
+  height: 35px;
+  width: 255px;
+  margin: auto;
+}
+
+.cross4 {
+  grid-area: j;
+  height: 50px;
+  width: 75px;
+  margin: auto;
 }
 
 .palette-name-input {
@@ -52,10 +98,15 @@ p {
   grid-area: i;
 }
 
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  grid-area: k;
+}
 .search-button {
-  grid-area: j;
+  width: 48%; 
 }
 
 .clear-button {
-  grid-area: k;
+  width: 48%; 
 }

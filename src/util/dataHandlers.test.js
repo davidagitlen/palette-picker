@@ -92,7 +92,7 @@ describe('dataHandlers', () => {
         hex_2: '#CDCDCD',
         hex_3: '#EFEFEF',
         hex_4: '#121212',
-        hex_5: '#343434', 
+        hex_5: '#343434'
       };
       const expected = [
         { hex_1: '#ABABAB' },
@@ -115,7 +115,7 @@ describe('dataHandlers', () => {
           hex_2: '#12345',
           hex_3: '#EFEFEF',
           hex_4: '#ABABAB',
-          hex_5: '#343434',
+          hex_5: '#343434'
         },
         {
           created_at: 'Now',
@@ -124,16 +124,16 @@ describe('dataHandlers', () => {
           hex_2: '#CDCDCD',
           hex_3: '#EFEFEF',
           hex_4: '#EFEFEF',
-          hex_5: '#343434',
-        }, 
-        { 
+          hex_5: '#343434'
+        },
+        {
           created_at: 'Now',
           updated_at: 'Later',
           hex_1: '#ABABAB',
           hex_2: '#CDCDCD',
           hex_3: '#EFEFEF',
           hex_4: '#1A2A3A',
-          hex_5: '#343434',
+          hex_5: '#343434'
         }
       ];
       const expected = [
@@ -142,21 +142,21 @@ describe('dataHandlers', () => {
           hex_2: '#12345',
           hex_3: '#EFEFEF',
           hex_4: '#ABABAB',
-          hex_5: '#343434',
+          hex_5: '#343434'
         },
         {
           hex_1: '#ABABAB',
           hex_2: '#CDCDCD',
           hex_3: '#EFEFEF',
           hex_4: '#EFEFEF',
-          hex_5: '#343434',
+          hex_5: '#343434'
         },
         {
           hex_1: '#ABABAB',
           hex_2: '#CDCDCD',
           hex_3: '#EFEFEF',
           hex_4: '#1A2A3A',
-          hex_5: '#343434',
+          hex_5: '#343434'
         }
       ];
       expect(cleanResults(mockPaletteArray)).toEqual(expected);

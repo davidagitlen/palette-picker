@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 import Display from '../Display/Display';
 import Controls from '../Controls/Controls';
+import Preview from "../Preview/Preview";
 import Projects from '../Projects/Projects';
 import { 
-  getProjects, 
-  getPalettes, 
-  postPalette, 
+  getProjects,
+  getPalettes,
+  postPalette,
   postProject,
   patchProject,
   patchPalette,
   deleteProject,
   deletePalette,
   searchByHex
-  } from '../../util/apiCalls'; 
-import { 
+  } from '../../util/apiCalls';
+import {
   generateHex,
   lockColors,
   mapLockedColors,
@@ -141,7 +142,7 @@ class App extends Component {
 
   selectPalette = selectedPalette => {
     const { palette, project_name } = selectedPalette;
-    const colors = reconstructColors(selectedPalette); 
+    const colors = reconstructColors(selectedPalette);
     this.setState({currentPalette: { palette , project_name, colors}});
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
   }
@@ -187,6 +188,7 @@ class App extends Component {
             currentPalette={currentPalette}
             toggleLock={this.toggleLock}
           />
+          <Preview projectName={currentPalette.project_name} paletteName={currentPalette.palette} colors={currentPalette} />
         </div>
         <Projects
           projects={projectsToShow}

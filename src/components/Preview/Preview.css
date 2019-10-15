@@ -1,0 +1,43 @@
+.Preview {
+  font-family: 'Roboto', sans-serif;
+  width: 23%;
+}
+
+.page {
+  border: solid #E8E8E8 2px;
+  height: 375px;
+}
+
+.page-header {
+  height: 50px;
+  font-size: 28px;
+  line-height: 36px;
+  margin: 0 auto;
+}
+
+.page-profile {
+  float: left;
+  height: 60px;
+  margin: 0px 10px 0px 10px;
+  width: 75px;
+}
+
+.page-title {
+  font-size: 21px;
+  margin: 5px 2px;
+}
+
+.page-body {
+  font-size: 12px;
+  margin: 2px 2px 10px 10px;
+  text-align: left;
+}
+
+p:last-child {
+  padding: 0 0 30px 0;
+}
+
+.page-footer {
+  height: 30px;
+  margin: 0 auto;
+}
