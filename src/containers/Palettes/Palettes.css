@@ -1,14 +1,17 @@
-.Palettes > h3 {
-  background-color: #7383C0;
-  height: 50px;
-}
-
 .Palettes {
   align-content: flex-end;
   flex-direction: row;
-  border: 1px solid black;
   height: max-content;
-  margin: 50px 10px 25px auto;
+  margin: 85px 10px 25px auto;
   width: 40%;
-  border: 1px solid black;
+}
+
+.Palettes > h3 {
+  background-color: #7383C0;
+  color: snow;
+  font-size: 21px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  padding: 0 0 0 10px;
 }
