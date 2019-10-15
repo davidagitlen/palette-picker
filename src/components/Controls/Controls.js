@@ -31,9 +31,14 @@ class Controls extends Component {
     this.props.saveCurrentPalette(palette, project)
   }
 
+  handleClearForm = e => {
+    e.preventDefault();
+    this.props.clearSearch();
+    this.setState({hex : ''});
+  }
 
   render() {
-    const { projects, findPalettes, clearSearch } = this.props;
+    const { projects, findPalettes } = this.props;
     const projectList = projects.map(project => {
       return <option value={project.project} key={project.id}>{project.project}</option>
     });
@@ -81,14 +86,17 @@ class Controls extends Component {
           <img src={cross} alt="line" className="cross4" />
           <div className="button-wrapper">
             <button
-              className="search-button"
-              onClick={e => findPalettes(e, this.state.hex)}
-            >
-              Search
-            </button>
-            <button className="clear-button" onClick={clearSearch}>
-              Clear
-            </button>
+          className='search-button'
+          onClick={e => findPalettes(e, this.state.hex)}
+        >
+          Search
+        </button>
+        <button
+          className='clear-button'
+          onClick={this.handleClearForm}
+        >
+          Clear
+        </button>
           </div>
         </form>
       </>

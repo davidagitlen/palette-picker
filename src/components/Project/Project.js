@@ -14,10 +14,9 @@ class Project extends Component{
   }
 
   handleChange = e => {
-    this.setState({project: e.target.value}, () => {
-      console.log(this.state)
-    })
+    this.setState({project: e.target.value});
   }
+  
   render() {
     const { 
       project, 

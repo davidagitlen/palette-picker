@@ -5,16 +5,22 @@ import Controls from '../Controls/Controls';
 import Preview from "../Preview/Preview";
 import Projects from '../Projects/Projects';
 import { 
-  getProjects, 
-  getPalettes, 
-  postPalette, 
+  getProjects,
+  getPalettes,
+  postPalette,
   postProject,
   patchProject,
   patchPalette,
   deleteProject,
   deletePalette,
   searchByHex
-  } from '../../util/apiCalls'; 
+  } from '../../util/apiCalls';
+import {
+  generateHex,
+  lockColors,
+  mapLockedColors,
+  reconstructColors
+  } from '../../util/dataHandlers';
 
 class App extends Component {
   constructor() {
@@ -24,11 +30,11 @@ class App extends Component {
         palette: "",
         project_name: "",
         colors: [
-          { hex_1: this.generateHex(), locked: false },
-          { hex_2: this.generateHex(), locked: false },
-          { hex_3: this.generateHex(), locked: false },
-          { hex_4: this.generateHex(), locked: false },
-          { hex_5: this.generateHex(), locked: false }
+          { hex_1: generateHex(), locked: false },
+          { hex_2: generateHex(), locked: false },
+          { hex_3: generateHex(), locked: false },
+          { hex_4: generateHex(), locked: false },
+          { hex_5: generateHex(), locked: false }
         ]
       },
       projects: [],
@@ -40,98 +46,58 @@ class App extends Component {
 
   componentDidMount = async () => {
     const projects = await getProjects();
-    this.setState({ projects }, () => {
-    });
+    this.setState({ projects });
     const palettes = await getPalettes();
-    this.setState({ palettes }, () => {
-    });
-  };
-
-  generateHex = (string = "#") => {
-    const hexadecimals = [
-      "0",
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F"
-    ];
-    const index = Math.floor(Math.random() * 16);
-    if (string.length === 7) {
-      return string;
-    } else {
-      return this.generateHex(string + hexadecimals[index]);
-    }
+    this.setState({ palettes });
   };
 
   getRandomHexes = () => {
     const { colors, project_name, palette } = this.state.currentPalette;
-    const newColors = colors.map((color, i) => {
-      if (!color.locked) {
-        color[`hex_${i + 1}`] = this.generateHex();
-        return color;
-      } else {
-        return color;
-      }
-    });
-    this.setState(
-      { currentPalette: { palette, project_name, colors: newColors } }
-    );
+    const newColors = mapLockedColors(colors);
+    this.setState({ currentPalette: { palette, project_name, colors: newColors }});
   };
 
   saveCurrentPalette = async (paletteName, projectName) => {
+    const palette = paletteName;
+    const project_name = projectName;
     const { projects } = this.state;
     const { colors } = this.state.currentPalette;
-    await this.setState(
-      {
-        currentPalette: {
-          palette: paletteName,
-          project_name: projectName,
-          colors: colors
-        }
-      }
-    );
+    await this.setState({currentPalette: {palette, project_name, colors}});
     if (projects.some(project => project.project === projectName)) {
-      try {
-        await postPalette(this.state.currentPalette);
-        const palettes = await getPalettes();
-        this.setState({palettes});
-      } catch (error) {
-        this.setState({ error });
-      }
+      this.handlePalettePost();
     } else {
-      try {
-        await postProject(projectName);
-        await postPalette(this.state.currentPalette);
-      } catch (error) {
-        this.setState({ error });
-      }
+      this.handlePaletteAndProjectPost(projectName);
     }
   };
 
+  handlePalettePost = async () => {
+    const { currentPalette } = this.state;
+    try {
+      await postPalette(currentPalette);
+      const palettes = await getPalettes();
+      this.setState({ palettes });
+    } catch (error) {
+      this.setState({ error });
+    }
+  }
+
+  handlePaletteAndProjectPost = async (projectName) => {
+    const { currentPalette } = this.state;
+    try {
+      await postProject(projectName);
+      await postPalette(currentPalette);
+      const projects = await getProjects();
+      const palettes = await getPalettes();
+      this.setState({ projects, palettes });
+    } catch (error) {
+      this.setState({ error });
+    }
+  }
+
   toggleLock = position => {
     const { colors, project_name, palette } = this.state.currentPalette;
-    const newColors = colors.map((color, i) => {
-      if (i === position) {
-        color.locked = !color.locked;
-        return color;
-      } else {
-        return color;
-      }
-    });
-    this.setState(
-      { currentPalette: { palette, project_name, colors: newColors } }
-    );
+    const newColors = lockColors(colors, position);
+    this.setState({ currentPalette: { palette, project_name, colors: newColors } });
   };
 
   editProject = async (projectName, id) => {
@@ -174,15 +140,11 @@ class App extends Component {
     }
   };
 
-  selectPalette = palette => {
-    const colors = [
-      { hex_1: palette.hex_1 },
-      { hex_2: palette.hex_2 },
-      { hex_3: palette.hex_3 },
-      { hex_4: palette.hex_4 },
-      { hex_5: palette.hex_5 }
-    ]; 
-    this.setState({currentPalette: { palette: palette.palette, project_name: palette.project_name, colors}})
+  selectPalette = selectedPalette => {
+    const { palette, project_name } = selectedPalette;
+    const colors = reconstructColors(selectedPalette);
+    this.setState({currentPalette: { palette , project_name, colors}});
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
   }
 
   findPalettes = async (e, hex) => {
@@ -195,9 +157,8 @@ class App extends Component {
     }
   }
 
-  clearSearch = e => {
-    e.preventDefault();
-    this.setState({foundPalettes: []}, () => {console.log(this.state)});
+  clearSearch = () => {
+    this.setState({foundPalettes: []});
   }
 
   render() {
@@ -209,8 +170,7 @@ class App extends Component {
       )
     }
     const palettes = foundPalettes.length ? foundPalettes : this.state.palettes;
-    const projectsToShow = foundPalettes.length ? foundProjects : 
-    this.state.projects;
+    const projectsToShow = foundPalettes.length ? foundProjects : this.state.projects;
     return (
       <main className="App">
         <h1>Color Schema</h1>
