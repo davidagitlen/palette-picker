@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preview should match the snapshot with all data passed in correctly 1`] = `
+<div
+  className="Preview"
+>
+  <div
+    className="page"
+  >
+    <header
+      className="page-header"
+      style={
+        Object {
+          "backgroundColor": "#ABABAB",
+        }
+      }
+    >
+      TestProject
+    </header>
+    <div>
+      <h4
+        className="page-title"
+        style={
+          Object {
+            "color": "#ABABAB",
+          }
+        }
+      >
+        TestPalette
+      </h4>
+      <img
+        alt="stock png"
+        className="page-profile"
+        src="profile.png"
+        style={
+          Object {
+            "border": "3px solid #ABABAB",
+          }
+        }
+      />
+      <p
+        className="page-body"
+        style={
+          Object {
+            "color": "#ABABAB",
+          }
+        }
+      >
+        Lorem lean startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck.
+      </p>
+      <p
+        className="page-body"
+        style={
+          Object {
+            "color": "#ABABAB",
+          }
+        }
+      >
+        Social bookmarking group buying crowded market pivot onboarding freemium prototype ping pong. Supply chain bandwidth holy grail disruptive series. Analytics burn rate entrepreneur beta hackathon agile development.
+      </p>
+      <p
+        className="page-body"
+        style={
+          Object {
+            "color": "#ABABAB",
+          }
+        }
+      >
+        Tech virtual drone online browser platform through in a system. But stream software offline. Professor install angel sector anywhere create at components smart. Document fab developers encryption smartphone powered, bespoke blockstack edit atoms. Privacy news data policies analytics documents.
+      </p>
+    </div>
+    <footer
+      className="page-footer"
+      style={
+        Object {
+          "backgroundColor": "#ABABAB",
+        }
+      }
+    />
+  </div>
+</div>
+`;

@@ -121,6 +121,7 @@ export const deleteProject = async id => {
   if (!response.ok) {
     throw new Error("There was a problem deleting the project.");
   }
+  return response;
 };
 
 export const deletePalette = async id => {
@@ -132,6 +133,7 @@ export const deletePalette = async id => {
   if (!response.ok) {
     throw new Error("There was a problem deleting the palette.");
   }
+  return response;
 };
 
 export const searchByHex = async hex => {
