@@ -3,7 +3,6 @@ import "./Palette.css";
 import trash from '../../images/trash.svg';
 
 const Palette = ({palette, editPalette, trashPalette, selectPalette}) => {
-  console.log('in Palette', palette)
   const {
     hex_1,
     hex_2,
