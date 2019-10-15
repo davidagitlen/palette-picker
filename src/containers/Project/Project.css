@@ -4,7 +4,7 @@ label {
 
 .project-wrapper {
   flex-direction: column;
-  margin: 25px auto 0 auto;
+  margin: 35px auto 0 auto;
   width: 40%;
 }
 
@@ -14,14 +14,17 @@ label {
   font-size: 28px;
   height: 50px;
   line-height: 45px;
+  margin: 0;
   padding: 0 0 0 10px;
 }
 
 .project-name-input {
-  text-align: left;
+  font-size: 21px;
   height: 50px;
   margin: 0px 0px 25px 0px;
   padding: 0px 0px 0px 5px;
+  text-align: left;
+  width: 98%;
 }
 
 .project-name-input::placeholder {

@@ -18,6 +18,10 @@
   width: 45%;
 }
 
+.palette-name-wrapper > h3 {
+  font-size: 18px;
+}
+
 .swatch-wrapper {
   display: flex;
   flex-direction: row;
