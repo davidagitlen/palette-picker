@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Preview/Preview.css';
-import cross from '../../images/cross.png';
+import profile from '../../images/profile.png';
 
 const Preview = (props) => {
   const { projectName, paletteName, colors } = props;
@@ -20,8 +20,8 @@ const Preview = (props) => {
             {paletteName || "Palette Name"}
           </h4>
           <img
-            className="page-png"
-            src={cross}
+            className="page-profile"
+            src={profile}
             alt="stock png"
             style={{ border: border }}
           />
