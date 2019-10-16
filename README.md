@@ -6,7 +6,7 @@ Color Schema challenges front end students to build and deploy development, test
 
 Our user, a web developer, can create and save a named palette of five hex codes in relation to their named project. Multiple palettes can be assigned to one project. Existing projects and palettes can also be selected, edited, and updated in the database. All palettes begin with randomized hex codes; the user can 'lock' one or more colors, then generate new random colors until their palette is complete.
 
-Color Schema was inspired by schema diagrams that visualize database design.
+Color Schema was inspired by schema diagrams that visualize database design, such as dbdiagram.io.
 
 Color Schema was built with React, Jest, Enzyme, CORS middleware, Postman, Travis CI, Heroku, Flaticon.com, Adobe Xd and Adobe Illustrator.
 
@@ -28,10 +28,10 @@ Color Schema was built with React, Jest, Enzyme, CORS middleware, Postman, Travi
 
 #### Stored projects with related palettes:
 
-![Stored Palettes](https://github.com/davidagitlen/palette-picker/blob/master/Palettes.png)
+![Stored Palettes](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/Palettes.png)
 
 #### Wireframe and Inspiration:
 
-![wireframe]()
+![wireframe](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/wireframe.png)
 
-![schema diagram](https://github.com/davidagitlen/palette-picker/blob/master/sample_diagram.png);
+![schema diagram](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/sample_diagram.png);
