@@ -21,6 +21,8 @@ import {
   mapLockedColors,
   reconstructColors
   } from '../../util/dataHandlers';
+import headerRt from '../../images/header-rt.png';
+import headerLt from '../../images/header-lt.png';
 
 class App extends Component {
   constructor() {
@@ -173,7 +175,11 @@ class App extends Component {
     const projectsToShow = foundPalettes.length ? foundProjects : this.state.projects;
     return (
       <main className="App">
-        <h1>Color Schema</h1>
+        <header>
+          <img src={headerLt} alt="logo-left" className="header-img" />
+          <h1>Color Schema</h1>
+          <img src={headerRt} alt="logo-right" className="header-img" />
+        </header>
         <div className="top-wrapper">
           <div className="controls-background">
             <Controls
@@ -188,7 +194,11 @@ class App extends Component {
             currentPalette={currentPalette}
             toggleLock={this.toggleLock}
           />
-          <Preview projectName={currentPalette.project_name} paletteName={currentPalette.palette} colors={currentPalette} />
+          <Preview
+            projectName={currentPalette.project_name}
+            paletteName={currentPalette.palette}
+            colors={currentPalette}
+          />
         </div>
         <Projects
           projects={projectsToShow}
