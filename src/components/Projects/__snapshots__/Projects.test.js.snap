@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Projects should match the snapshot with data passed through correctly 1`] = `
+<section
+  className="Projects"
+>
+  <Project
+    editPalette={[MockFunction]}
+    editProject={[MockFunction]}
+    key="1"
+    palettes={
+      Array [
+        Object {
+          "hex_1": "#565656",
+          "hex_2": "#787878",
+          "hex_3": "#909090",
+          "hex_4": "#A1A1A1",
+          "hex_5": "#B2B2B2",
+          "id": 1,
+          "project_id": 1,
+          "project_name": "Project_One",
+        },
+        Object {
+          "hex_1": "#565656",
+          "hex_2": "#787878",
+          "hex_3": "#909090",
+          "hex_4": "#A1A1A1",
+          "hex_5": "#B2B2B2",
+          "id": 2,
+          "project_id": 2,
+          "project_name": "Project_Two",
+        },
+      ]
+    }
+    project={
+      Object {
+        "id": 1,
+        "project": "Project_One",
+      }
+    }
+    selectPalette={[MockFunction]}
+    trashPalette={[MockFunction]}
+    trashProject={[MockFunction]}
+  />
+  <Project
+    editPalette={[MockFunction]}
+    editProject={[MockFunction]}
+    key="2"
+    palettes={
+      Array [
+        Object {
+          "hex_1": "#565656",
+          "hex_2": "#787878",
+          "hex_3": "#909090",
+          "hex_4": "#A1A1A1",
+          "hex_5": "#B2B2B2",
+          "id": 1,
+          "project_id": 1,
+          "project_name": "Project_One",
+        },
+        Object {
+          "hex_1": "#565656",
+          "hex_2": "#787878",
+          "hex_3": "#909090",
+          "hex_4": "#A1A1A1",
+          "hex_5": "#B2B2B2",
+          "id": 2,
+          "project_id": 2,
+          "project_name": "Project_Two",
+        },
+      ]
+    }
+    project={
+      Object {
+        "id": 2,
+        "project": "Project_Two",
+      }
+    }
+    selectPalette={[MockFunction]}
+    trashPalette={[MockFunction]}
+    trashProject={[MockFunction]}
+  />
+</section>
+`;

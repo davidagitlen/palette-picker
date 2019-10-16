@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls should match the snapshot with data passed through correctly 1`] = `
+<Fragment>
+  <h2>
+    Add A Project & Palette:
+  </h2>
+  <form
+    className="Controls"
+  >
+    <button
+      className="random-hex-button"
+      onClick={[Function]}
+    >
+      New palette!
+    </button>
+    <img
+      alt="line"
+      className="cross1"
+      src="cross.png"
+    />
+    <input
+      autoComplete="off"
+      className="project-name-input"
+      list="project-list"
+      name="project"
+      onChange={[Function]}
+      placeholder="Select a project!"
+      type="text"
+      value=""
+    />
+    <datalist
+      id="project-list"
+    >
+      <option
+        key="1"
+        value="Project_One"
+      >
+        Project_One
+      </option>
+      <option
+        key="2"
+        value="Project_Two"
+      >
+        Project_Two
+      </option>
+      <option
+        key="3"
+        value="Project_Three"
+      >
+        Project_Three
+      </option>
+      <option
+        key="4"
+        value="Project_Four"
+      >
+        Project_Four
+      </option>
+      <option
+        key="5"
+        value="Project_Five"
+      >
+        Project_Five
+      </option>
+    </datalist>
+    <img
+      alt="line"
+      className="cross2"
+      src="cross.png"
+    />
+    <input
+      className="palette-name-input"
+      name="palette"
+      onChange={[Function]}
+      placeholder="Name your palette!"
+      type="text"
+      value=""
+    />
+    <img
+      alt="line"
+      className="cross3"
+      src="cross.png"
+    />
+    <button
+      className="save-button"
+      onClick={[Function]}
+    >
+      Save Palette
+    </button>
+    <h3>
+      Search By Hex:
+    </h3>
+    <input
+      className="hex-input"
+      name="hex"
+      onChange={[Function]}
+      placeholder="Enter hex code!"
+      type="text"
+      value=""
+    />
+    <img
+      alt="line"
+      className="cross4"
+      src="cross.png"
+    />
+    <div
+      className="button-wrapper"
+    >
+      <button
+        className="search-button"
+        onClick={[Function]}
+      >
+        Search
+      </button>
+      <button
+        className="clear-button"
+        onClick={[Function]}
+      >
+        Clear
+      </button>
+    </div>
+  </form>
+</Fragment>
+`;

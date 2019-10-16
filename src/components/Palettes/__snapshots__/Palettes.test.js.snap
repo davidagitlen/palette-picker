@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Palettes should match the snapshot with data passed in correctly 1`] = `
+<article
+  className="Palettes"
+>
+  <h3>
+    Palettes: Click to Edit
+  </h3>
+  <Palette
+    editPalette={[MockFunction]}
+    key="34"
+    palette={
+      Object {
+        "hex_1": "#3192EC",
+        "hex_2": "#77B8AB",
+        "hex_3": "#910E31",
+        "hex_4": "#D8C86A",
+        "hex_5": "#6E16C2",
+        "id": 34,
+        "palette": "one",
+        "project_id": 1,
+        "project_name": "Blah blah",
+      }
+    }
+    selectPalette={[MockFunction]}
+    trashPalette={[MockFunction]}
+  />
+  <Palette
+    editPalette={[MockFunction]}
+    key="34"
+    palette={
+      Object {
+        "hex_1": "#3192EC",
+        "hex_2": "#77B8AB",
+        "hex_3": "#910E31",
+        "hex_4": "#D8C86A",
+        "hex_5": "#6E16C2",
+        "id": 34,
+        "palette": "two",
+        "project_id": 2,
+        "project_name": "Blib blob",
+      }
+    }
+    selectPalette={[MockFunction]}
+    trashPalette={[MockFunction]}
+  />
+</article>
+`;

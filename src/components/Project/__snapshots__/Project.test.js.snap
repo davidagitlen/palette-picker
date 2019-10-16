@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project should match the snapshot with data passed in correctly 1`] = `
+<article
+  className="Project"
+>
+  <div
+    className="input-wrapper"
+  >
+    <input
+      alt="trash"
+      id="trash"
+      onClick={[Function]}
+      src="trash.svg"
+      type="image"
+    />
+    <label
+      htmlFor="trash"
+    >
+      Trash
+    </label>
+  </div>
+  <div
+    className="input-wrapper"
+  >
+    <input
+      alt="update"
+      id="update"
+      onClick={[Function]}
+      src="update.svg"
+      type="image"
+    />
+    <label
+      htmlFor="update"
+    >
+      Update
+    </label>
+  </div>
+  <div
+    className="project-wrapper"
+  >
+    <h3>
+      Project:
+    </h3>
+    <input
+      className="project-name-input"
+      onChange={[Function]}
+      placeholder="Project_One"
+      type="text"
+      value=""
+    />
+  </div>
+  <img
+    alt="line"
+    className="one-to-many"
+    src="one_to_many.png"
+  />
+  <Palettes
+    editPalette={[MockFunction]}
+    palettes={
+      Array [
+        Object {
+          "hex_1": "#3192EC",
+          "hex_2": "#77B8AB",
+          "hex_3": "#910E31",
+          "hex_4": "#D8C86A",
+          "hex_5": "#6E16C2",
+          "id": 34,
+          "palette": "one",
+          "project_id": 1,
+          "project_name": "Blah blah",
+        },
+      ]
+    }
+    selectPalette={[MockFunction]}
+    trashPalette={[MockFunction]}
+  />
+</article>
+`;
