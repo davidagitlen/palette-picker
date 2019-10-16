@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Palette should match the snapshot with data passed in correctly 1`] = `
+<Fragment>
+  <article
+    className="Palette"
+  >
+    <div
+      className="palette-name-wrapper"
+      onClick={[Function]}
+    >
+      <h3>
+        one
+      </h3>
+    </div>
+    <div
+      className="swatch-wrapper"
+      onClick={[Function]}
+    >
+      <div
+        className="swatches"
+        key="12345"
+        style={
+          Object {
+            "backgroundColor": "#3192EC",
+          }
+        }
+      />
+      <div
+        className="swatches"
+        key="12346"
+        style={
+          Object {
+            "backgroundColor": "#77B8AB",
+          }
+        }
+      />
+      <div
+        className="swatches"
+        key="12347"
+        style={
+          Object {
+            "backgroundColor": "#910E31",
+          }
+        }
+      />
+      <div
+        className="swatches"
+        key="12348"
+        style={
+          Object {
+            "backgroundColor": "#D8C86A",
+          }
+        }
+      />
+      <div
+        className="swatches"
+        key="12349"
+        style={
+          Object {
+            "backgroundColor": "#6E16C2",
+          }
+        }
+      />
+    </div>
+    <input
+      alt="trash"
+      className="trash"
+      onClick={[Function]}
+      src="trash.svg"
+      type="image"
+    />
+  </article>
+</Fragment>
+`;

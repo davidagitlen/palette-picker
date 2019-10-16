@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display should match the snapshot if a palette with locked hexes is passed in 1`] = `
+<section
+  className="Display"
+>
+  <div>
+    <div
+      key="div012345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="locked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12345"
+        style={
+          Object {
+            "backgroundColor": "#565656",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #565656
+      </h3>
+    </div>
+    <div
+      key="div112345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="unlocked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12346"
+        style={
+          Object {
+            "backgroundColor": "#787878",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #787878
+      </h3>
+    </div>
+    <div
+      key="div212345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="locked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12347"
+        style={
+          Object {
+            "backgroundColor": "#909090",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #909090
+      </h3>
+    </div>
+    <div
+      key="div312345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="unlocked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12348"
+        style={
+          Object {
+            "backgroundColor": "#ABABAB",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #ABABAB
+      </h3>
+    </div>
+    <div
+      key="div412345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="locked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12349"
+        style={
+          Object {
+            "backgroundColor": "#CDCDCD",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #CDCDCD
+      </h3>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Display should match the snapshot with data passed in 1`] = `
+<section
+  className="Display"
+>
+  <div>
+    <div
+      key="div012345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="unlocked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12345"
+        style={
+          Object {
+            "backgroundColor": "#ABABAB",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #ABABAB
+      </h3>
+    </div>
+    <div
+      key="div112345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="unlocked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12346"
+        style={
+          Object {
+            "backgroundColor": "#CDCDCD",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #CDCDCD
+      </h3>
+    </div>
+    <div
+      key="div212345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="unlocked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12347"
+        style={
+          Object {
+            "backgroundColor": "#EFEFEF",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #EFEFEF
+      </h3>
+    </div>
+    <div
+      key="div312345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="unlocked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12348"
+        style={
+          Object {
+            "backgroundColor": "#121212",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #121212
+      </h3>
+    </div>
+    <div
+      key="div412345"
+    >
+      <input
+        alt="Lock/Unlock"
+        className="lock-image"
+        key="lock12345"
+        onClick={[Function]}
+        src="unlocked.svg"
+        type="image"
+      />
+      <div
+        className="swatch"
+        key="12349"
+        style={
+          Object {
+            "backgroundColor": "#343434",
+          }
+        }
+      />
+      <h3
+        className="hex-code"
+        key="h312345"
+      >
+        #343434
+      </h3>
+    </div>
+  </div>
+</section>
+`;

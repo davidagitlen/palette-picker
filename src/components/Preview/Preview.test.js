@@ -1,10 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Preview from './Preview';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
 
 describe('Preview', () => {
   it('should match the snapshot with all data passed in correctly', () => {
@@ -23,4 +19,22 @@ describe('Preview', () => {
     />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should match the snapshot if there are no default project or palette names passed in', () => {
+    const wrapper = shallow(
+      <Preview
+        paletteName=''
+        projectName=''
+        colors={{
+          colors: [
+            { hex_1: '#ABABAB' },
+            { hex_2: '#ABABAB' },
+            { hex_3: '#ABABAB' },
+            { hex_4: '#ABABAB' },
+            { hex_5: '#ABABAB' }
+          ]
+        }}
+      />);
+    expect(wrapper).toMatchSnapshot();
+  })
 });
