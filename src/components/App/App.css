@@ -24,5 +24,6 @@ h1 {
 }
 
 .controls-background {
-  background-color: #E8E8E8;
+  background-color: rgba(240,240,240, 0.7);
+  box-shadow: 1px 1px 4px #D3D3D3;
 }
