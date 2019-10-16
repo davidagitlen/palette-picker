@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./Controls.css";
 import horizontalLine from '../../images/horizontal.png';
 import verticalLine from '../../images/vertical_line.png';
@@ -107,3 +108,11 @@ class Controls extends Component {
 };
 
 export default Controls;
+
+Controls.propTypes = {
+  projects: PropTypes.array.isRequired,
+  clearSearch: PropTypes.func.isRequired,
+  getRandomHexes: PropTypes.func.isRequired,
+  saveCurrentPalette: PropTypes.func.isRequired,
+  findPalettes: PropTypes.func.isRequired
+};

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import './Project.css';
 import Palettes from '../Palettes/Palettes';
 import update from '../../images/update.svg';
@@ -73,3 +74,13 @@ class Project extends Component{
 }
 
 export default Project;
+
+Project.propTypes = {
+  project: PropTypes.object.isRequired,
+  palettes: PropTypes.array.isRequired,
+  editProject: PropTypes.func.isRequired,
+  editPalette: PropTypes.func.isRequired,
+  trashProject: PropTypes.func.isRequired,
+  trashPalette: PropTypes.func.isRequired,
+  selectPalette: PropTypes.func.isRequired
+};

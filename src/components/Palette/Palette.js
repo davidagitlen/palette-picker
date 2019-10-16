@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Palette.css";
 import trash from '../../images/trash.svg';
 
@@ -47,3 +48,10 @@ const Palette = ({palette, editPalette, trashPalette, selectPalette}) => {
 };
 
 export default Palette;
+
+Palette.propTypes = {
+  palette: PropTypes.array.isRequired,
+  editPalette: PropTypes.func.isRequired,
+  trashPalette: PropTypes.func.isRequired,
+  selectPalette: PropTypes.func.isRequired
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Palettes.css";
 import Palette from "../Palette/Palette";
 
@@ -20,3 +21,10 @@ const Palettes = ({palettes, editPalette, trashPalette, selectPalette}) => {
 };
 
 export default Palettes;
+
+Palettes.propTypes = {
+  palettes: PropTypes.array.isRequired,
+  editPalette: PropTypes.func.isRequired,
+  trashPalette: PropTypes.func.isRequired,
+  selectPalette: PropTypes.func.isRequired
+};
