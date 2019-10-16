@@ -20,6 +20,12 @@
   margin: 0 10px 15px 10px;
 }
 
+.lock-image:hover {
+  border: none;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 .hex-code {
   font-family: 'Source Code Pro', monospace;
   display: inline-block;
