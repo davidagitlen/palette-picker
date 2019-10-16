@@ -24,7 +24,7 @@ Color Schema was built with React, Jest, Enzyme, CORS middleware, Postman, Travi
 
 #### The Palette building form and display:
 
-![Controls and Display](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/ControlsDisplay.png)
+![Controls and Display](https://github.com/davidagitlen/palette-picker/blob/master/src/images/ControlsDisplay.png)
 
 #### Stored projects with related palettes:
 
