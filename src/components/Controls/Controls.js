@@ -110,7 +110,7 @@ class Controls extends Component {
 export default Controls;
 
 Controls.propTypes = {
-  projects: PropTypes.array.isRequired,
+  projects: PropTypes.array,
   clearSearch: PropTypes.func.isRequired,
   getRandomHexes: PropTypes.func.isRequired,
   saveCurrentPalette: PropTypes.func.isRequired,

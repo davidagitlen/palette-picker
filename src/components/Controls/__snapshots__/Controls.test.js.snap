@@ -12,20 +12,21 @@ exports[`Controls should match the snapshot with data passed through correctly 1
       className="random-hex-button"
       onClick={[Function]}
     >
-      New palette!
+      New Color Swatches
     </button>
     <img
       alt="line"
-      className="cross1"
-      src="cross.png"
+      className="line1"
+      src="vertical_line.png"
     />
     <input
       autoComplete="off"
       className="project-name-input"
+      id="project-name"
       list="project-list"
       name="project"
       onChange={[Function]}
-      placeholder="Select a project!"
+      placeholder="Enter a Project Name"
       type="text"
       value=""
     />
@@ -65,21 +66,21 @@ exports[`Controls should match the snapshot with data passed through correctly 1
     </datalist>
     <img
       alt="line"
-      className="cross2"
-      src="cross.png"
+      className="line2"
+      src="horizontal.png"
     />
     <input
       className="palette-name-input"
       name="palette"
       onChange={[Function]}
-      placeholder="Name your palette!"
+      placeholder="Enter a Palette Name"
       type="text"
       value=""
     />
     <img
       alt="line"
-      className="cross3"
-      src="cross.png"
+      className="line3"
+      src="vertical_line.png"
     />
     <button
       className="save-button"
@@ -94,14 +95,14 @@ exports[`Controls should match the snapshot with data passed through correctly 1
       className="hex-input"
       name="hex"
       onChange={[Function]}
-      placeholder="Enter hex code!"
+      placeholder="Enter a hex code"
       type="text"
       value=""
     />
     <img
       alt="line"
-      className="cross4"
-      src="cross.png"
+      className="line4"
+      src="horizontal.png"
     />
     <div
       className="button-wrapper"

@@ -50,7 +50,7 @@ const Palette = ({palette, editPalette, trashPalette, selectPalette}) => {
 export default Palette;
 
 Palette.propTypes = {
-  palette: PropTypes.array.isRequired,
+  palette: PropTypes.object.isRequired,
   editPalette: PropTypes.func.isRequired,
   trashPalette: PropTypes.func.isRequired,
   selectPalette: PropTypes.func.isRequired
