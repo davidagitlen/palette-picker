@@ -34,6 +34,6 @@ Color Schema was built with React, Jest, Enzyme, CORS middleware, Postman, Travi
 
 ![wireframe](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/wireframe.png)
 
-![Clubhouse](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/Clubhouse.png)
+![Clubhouse](https://github.com/davidagitlen/palette-picker/blob/master/src/images/Clubhouse.png)
 
 ![schema diagram](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/sample_diagram.png);
