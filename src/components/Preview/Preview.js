@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import '../Preview/Preview.css';
 import profile from '../../images/profile.png';
 
@@ -54,3 +55,9 @@ const Preview = (props) => {
 }
 
 export default Preview;
+
+Preview.propTypes = {
+  projectName: PropTypes.string.isRequired,
+  paletteName: PropTypes.string.isRequired,
+  colors: PropTypes.object.isRequired,
+};

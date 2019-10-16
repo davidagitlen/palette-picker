@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import './Display.css';
 import locked from '../../images/locked.svg';
 import unlocked from '../../images/unlocked.svg';
@@ -41,3 +42,8 @@ const Display = ({ currentPalette, toggleLock }) => {
 }
 
 export default Display;
+
+Display.propTypes = {
+  currentPalette: PropTypes.object.isRequired,
+  toggleLock: PropTypes.func.isRequired
+};
