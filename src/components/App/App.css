@@ -1,12 +1,14 @@
-h1 {
+header {
   background-color: #424A60;
+}
+
+h1 {
   display: inline;
   color: #C8CAC8;
   font-family: 'Source Code Pro', monospace;
   font-size: 66px;
   line-height: 88px;
   margin: 0px 0px 25px 0px;
-
 }
 
 .App {
@@ -14,6 +16,11 @@ h1 {
   flex-direction: column;
   text-align: center;
   background-color: ghostwhite;
+}
+
+.header-img {
+  height: 50px;
+  margin: 0 20px 20px 20px;
 }
 
 .top-wrapper {
@@ -24,5 +31,6 @@ h1 {
 }
 
 .controls-background {
-  background-color: #E8E8E8;
+  background-color: rgba(240,240,240, 0.7);
+  box-shadow: 1px 1px 4px #D3D3D3;
 }

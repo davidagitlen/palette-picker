@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Controls.css";
-import cross from '../../images/cross.png';
+import horizontalLine from '../../images/horizontal.png';
+import verticalLine from '../../images/vertical_line.png';
 
 class Controls extends Component {
   constructor(props) {
@@ -47,30 +48,31 @@ class Controls extends Component {
         <h2>Add A Project & Palette:</h2>
         <form className="Controls">
           <button className="random-hex-button" onClick={this.handleRandomize}>
-            New palette!
+            New Color Swatches
           </button>
-          <img src={cross} alt="line" className="cross1" />
+          <img src={verticalLine} alt="line" className="line1" />
           <input
+            id="project-name"
             className="project-name-input"
             list="project-list"
             type="text"
             name="project"
-            placeholder="Select a project!"
+            placeholder="Enter a Project Name"
             autoComplete="off"
             value={this.state.project}
             onChange={this.handleChange}
           />
           <datalist id="project-list">{projectList}</datalist>
-          <img src={cross} alt="line" className="cross2" />
+          <img src={horizontalLine} alt="line" className="line2" />
           <input
             className="palette-name-input"
             type="text"
             name="palette"
-            placeholder="Name your palette!"
+            placeholder="Enter a Palette Name"
             value={this.state.palette}
             onChange={this.handleChange}
           />
-          <img src={cross} alt="line" className="cross3" />
+          <img src={verticalLine} alt="line" className="line3" />
           <button className="save-button" onClick={this.handleSave}>
             Save Palette
           </button>
@@ -79,11 +81,11 @@ class Controls extends Component {
             className="hex-input"
             type="text"
             name="hex"
-            placeholder="Enter hex code!"
+            placeholder="Enter a hex code"
             value={this.state.hex}
             onChange={this.handleChange}
           />
-          <img src={cross} alt="line" className="cross4" />
+          <img src={horizontalLine} alt="line" className="line4" />
           <div className="button-wrapper">
             <button
           className='search-button'

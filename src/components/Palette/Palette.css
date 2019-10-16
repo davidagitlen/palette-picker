@@ -5,9 +5,11 @@
   flex-direction: row;
   height: 50px;
   width: 100%;
+  box-shadow: 3px 3px 7px #A9A9A9;
 }
 
 .Palette:hover {
+  border: 1px solid #424A60;
   cursor: pointer;
 }
 

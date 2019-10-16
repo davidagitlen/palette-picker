@@ -2,8 +2,21 @@ button,
 input, 
 h2,
 h3 {
+  color: #424A60;
   font-family: 'Roboto', sans-serif;
+  font-size: 18px;
   margin: 0;
+}
+
+button:hover {
+  background-color: #424A60;
+  border: 1px solid #424A60;
+  color: ghostwhite;
+  cursor: pointer;
+}
+
+input:hover {
+  border: 1px solid #424A60;
 }
 
 button {
@@ -15,17 +28,24 @@ input {
   display: inline-block;
   height: 48px;
   width: 255px;
+  z-index: 1;
+}
+
+input::placeholder {
+    padding-left: 2px;
 }
 
 h2 {
+  font-family: 'Source Code Pro', monospace;
   font-size: 21px;
   margin: 10px 0 10px 20px;
   text-align: left;
 }
 
 h3 {
-  grid-area: h;
+  font-family: 'Source Code Pro', monospace;
   font-size: 21px;
+  grid-area: h;
   margin: 10px 0 5px 0px;
   text-align: left;
 }
@@ -58,28 +78,28 @@ h3 {
   padding: 0px 0px 0px 5px;
 }
 
-.cross1 {
+.line1 {
   grid-area: b;
   height: 35px;
   width: 260px;
   margin: auto;
 }
 
-.cross2 {
+.line2 {
   grid-area: d;
   height: 50px;
   width: 75px;
   margin: auto;
 }
 
-.cross3 {
+.line3 {
   grid-area: f;
   height: 35px;
   width: 255px;
   margin: auto;
 }
 
-.cross4 {
+.line4 {
   grid-area: j;
   height: 50px;
   width: 75px;
@@ -109,4 +129,10 @@ h3 {
 
 .clear-button {
   width: 48%; 
+}
+
+#project-name,
+#project-list {
+  box-shadow: none;
+  font-size: 18px;
 }
