@@ -26,8 +26,8 @@ const Projects = ({projects, palettes, editProject, editPalette, trashProject, t
 export default Projects;
 
 Projects.propTypes = {
-  projects: PropTypes.array.isRequired,
-  palettes: PropTypes.array.isRequired,
+  projects: PropTypes.array,
+  palettes: PropTypes.array,
   editProject: PropTypes.func.isRequired,
   editPalette: PropTypes.func.isRequired,
   trashProject: PropTypes.func.isRequired,

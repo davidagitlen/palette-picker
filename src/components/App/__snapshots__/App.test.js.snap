@@ -4,9 +4,21 @@ exports[`App should match the snapshot 1`] = `
 <main
   className="App"
 >
-  <h1>
-    Color Schema
-  </h1>
+  <header>
+    <img
+      alt="logo-left"
+      className="header-img"
+      src="header-lt.png"
+    />
+    <h1>
+      Color Schema
+    </h1>
+    <img
+      alt="logo-right"
+      className="header-img"
+      src="header-rt.png"
+    />
+  </header>
   <div
     className="top-wrapper"
   >
