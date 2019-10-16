@@ -65,8 +65,7 @@ describe('dataHandlers', () => {
   });
 
   describe('mapLockedColors', () => {
-    it.skip('should return an array with the hex value of unlocked colors replaced by new values', () => {
-      global.generateHex = jest.fn().mockImplementation(() => '#123456');
+    it('should return an array with the hex value of unlocked colors replaced by new values', () => {
       const testColors = [
         { hex_1: '#ABABAB', locked: true },
         { hex_2: '#CDCDCD', locked: false },
@@ -81,7 +80,9 @@ describe('dataHandlers', () => {
         { hex_4: '#123456', locked: false },
         { hex_5: '#343434', locked: true }
       ];
-      expect(mapLockedColors(testColors)).toEqual(expected);
+      expect(mapLockedColors(testColors)[0]).toEqual(expected[0]);
+      expect(mapLockedColors(testColors)[2]).toEqual(expected[2]);
+      expect(mapLockedColors(testColors)[4]).toEqual(expected[4]);
     });
   });
 

@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<main
+  className="App"
+>
+  <h1>
+    Color Schema
+  </h1>
+  <div
+    className="top-wrapper"
+  >
+    <div
+      className="controls-background"
+    >
+      <Controls
+        clearSearch={[Function]}
+        findPalettes={[Function]}
+        getRandomHexes={[Function]}
+        projects={
+          Array [
+            Object {
+              "id": 1,
+              "project": "Project_One",
+            },
+            Object {
+              "id": 2,
+              "project": "Project_Two",
+            },
+          ]
+        }
+        saveCurrentPalette={[Function]}
+      />
+    </div>
+    <Display
+      currentPalette={
+        Object {
+          "colors": Array [
+            Object {
+              "hex_1": "#ABABAB",
+              "locked": false,
+            },
+            Object {
+              "hex_2": "#CDCDCD",
+              "locked": false,
+            },
+            Object {
+              "hex_3": "#EFEFEF",
+              "locked": false,
+            },
+            Object {
+              "hex_4": "#121212",
+              "locked": false,
+            },
+            Object {
+              "hex_5": "#343434",
+              "locked": false,
+            },
+          ],
+          "palette": "Mock_Palette",
+          "project_name": "Mock_Project",
+        }
+      }
+      toggleLock={[Function]}
+    />
+    <Preview
+      colors={
+        Object {
+          "colors": Array [
+            Object {
+              "hex_1": "#ABABAB",
+              "locked": false,
+            },
+            Object {
+              "hex_2": "#CDCDCD",
+              "locked": false,
+            },
+            Object {
+              "hex_3": "#EFEFEF",
+              "locked": false,
+            },
+            Object {
+              "hex_4": "#121212",
+              "locked": false,
+            },
+            Object {
+              "hex_5": "#343434",
+              "locked": false,
+            },
+          ],
+          "palette": "Mock_Palette",
+          "project_name": "Mock_Project",
+        }
+      }
+      paletteName="Mock_Palette"
+      projectName="Mock_Project"
+    />
+  </div>
+  <Projects
+    editPalette={[Function]}
+    editProject={[Function]}
+    palettes={
+      Array [
+        Object {
+          "hex_1": "#565656",
+          "hex_2": "#787878",
+          "hex_3": "#909090",
+          "hex_4": "#A1A1A1",
+          "hex_5": "#B2B2B2",
+          "id": 1,
+          "project_id": 1,
+          "project_name": "Project_One",
+        },
+        Object {
+          "hex_1": "#565656",
+          "hex_2": "#787878",
+          "hex_3": "#909090",
+          "hex_4": "#A1A1A1",
+          "hex_5": "#B2B2B2",
+          "id": 2,
+          "project_id": 2,
+          "project_name": "Project_Two",
+        },
+      ]
+    }
+    projects={
+      Array [
+        Object {
+          "id": 1,
+          "project": "Project_One",
+        },
+        Object {
+          "id": 2,
+          "project": "Project_Two",
+        },
+      ]
+    }
+    selectPalette={[Function]}
+    trashPalette={[Function]}
+    trashProject={[Function]}
+  />
+</main>
+`;
