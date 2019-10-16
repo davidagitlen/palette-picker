@@ -72,5 +72,7 @@ label {
 label:hover,
 #trash:hover,
 #update:hover {
+  border: none;
+  cursor: pointer;
   text-decoration: underline #424A60;
 }
