@@ -67,3 +67,9 @@ label {
   height: 30px;
   width: 100px;
 }
+
+label:hover,
+#trash:hover,
+#update:hover {
+  text-decoration: underline #424A60;
+}
