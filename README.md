@@ -24,14 +24,16 @@ Color Schema was built with React, Jest, Enzyme, CORS middleware, Postman, Travi
 
 #### The Palette building form and display:
 
-![Controls and Display]()
+![Controls and Display](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/ControlsDisplay.png)
 
 #### Stored projects with related palettes:
 
 ![Stored Palettes](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/Palettes.png)
 
-#### Wireframe and Inspiration:
+#### Wireframe, Project Board and Inspiration:
 
 ![wireframe](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/wireframe.png)
+
+![Clubhouse](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/Clubhouse.png)
 
 ![schema diagram](https://github.com/davidagitlen/palette-picker/blob/readme/src/images/sample_diagram.png);
