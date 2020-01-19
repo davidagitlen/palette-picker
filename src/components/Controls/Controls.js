@@ -91,7 +91,7 @@ class Controls extends Component {
             <button
           className='search-button'
           onClick={e => findPalettes(e, this.state.hex)}
-        >
+            >
           Search
         </button>
         <button

@@ -137,7 +137,8 @@ export const deletePalette = async id => {
 };
 
 export const searchByHex = async hex => {
-  const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes?hex=${hex}`;
+  const cleanedHex = hex.replace(/#/g, '');
+  const url = process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes?hex=${cleanedHex}`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error("There was a problem searching for palettes.");
