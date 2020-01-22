@@ -1,4 +1,4 @@
-# Color Schema
+# Color Schema [![Build Status](https://travis-ci.org/davidagitlen/palette-picker.svg?branch=master)](https://travis-ci.org/davidagitlen/palette-picker)
 
 Color Schema is a color palette picking web app built for web developers. It is a paired project built during Mod 4 of the Front End Engineering program at the Turing School of Software and Design.
 
